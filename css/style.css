@@ -2,7 +2,7 @@
 
 :root {
   --primary-color:   #1e84d4;
-  --dark-color:  #202255;
+  --dark-color:  #000;
   --light-color: #fff;
   --lose-color:  #ff5546;
   --win-color: #45b5aa;
@@ -74,13 +74,13 @@ header.header{
  margin: 0 auto;
  /* padding: 1.5rem 2rem; */
   border:2px solid var(--light-color);
-  color: #fff;
+  color:  var(--light-color);
   text-transform: uppercase;
 }
 
  .score p{
-  color: #ff8a86;
-  background: var(--light-color);
+  color:  var(--light-color);
+  background: #ff5546;
  }
  .score p:first-of-type{
    padding: 1rem;
@@ -109,7 +109,8 @@ span.computer__score{
 
 h2{
   margin-top: 2rem;
-  color: #e1b11d;
+  text-transform: uppercase;
+ 
 }
 
 .options {
@@ -118,18 +119,23 @@ h2{
   grid-gap: 1.5rem;
   margin-top: 3rem;
   text-align: center;
-  color:#ecd3ca;
   padding:1rem;
+}
 
+.option:first-of-type {
+  color: #e4a088;
+}
+.option:last-of-type {
+  color:  #88685d;
+}
+.option:nth-child(2){
+ color:#3e332f;
 }
 
 .option {
-  cursor: pointer;
-  border:2px solid #fff;
-  padding:1.5rem;
-  border-radius: 50px;
+ border-radius:50px;
+ border: 2px solid var(--light-color);
 }
-
 .option:hover {
   color: var(--primary-color);
   background-color: var(--light-color);
@@ -146,17 +152,20 @@ h2{
 
 /* when user win */
 .green-glow{
-  border:4px solid #4dcc7d;
+ 
+  border:4px solid var(--win-color);
   box-shadow: 0 0 10px #31b43a;
   transition: all .3s linear;
 
 }
 .red-glow{
-  border:4px solid #fc121b;
+ 
+  border:4px solid var(--lose-color);
   box-shadow: 0 0 10px #d01115;
   transition: all .3s linear;
 }
 .grey-glow{
+  color: var(--light-color);
   border:4px solid #464647;
   box-shadow: 0 0 10px #25292b;
   transition: all .3s linear;

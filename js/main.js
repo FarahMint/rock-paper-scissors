@@ -25,6 +25,8 @@ const scoreboard={
 function playGame(e){
     // target the playeroption choosen by the user -- e.target.id -- and take the first char
     const userOption=e.target.id.slice(0,1);
+    // clear class text
+    removeClassText()
     //  as soon as user click show restart button
     restart.style.display='inline'
     // generate an option for computer hand
@@ -69,7 +71,7 @@ function getWinner(user, computer ){
   * 'ss': scissors scissors
  */
 
- 
+
 // join user and computer choice
 switch (user + computer) {
     case 'rs':
@@ -118,10 +120,12 @@ function win(user, computer){
  message.innerHTML= `${convertBacKToWord(user)} beats ${convertBacKToWord(computer)}. You win!`;
 
 //use css class predifine in the stylesheet to highligh user choice
+message.classList.add('text-win');
     userChoiceDiv.classList.add('green-glow');
 setTimeout(()=>{
     // remove highlight after 2 sec
     userChoiceDiv.classList.remove('green-glow');
+ 
 }, 2000)
 
  
@@ -136,11 +140,13 @@ function lose(user, computer){
     //  dispay  lose message 
     message.innerHTML= `${convertBacKToWord(user)} beats ${convertBacKToWord(computer)}. You lose!`;
 
-   //use css class predifine in the stylesheet to highligh user choice
+   //use css class predifine in the stylesheet to highligh user choice and msg
+   message.classList.add('text-lose');
     userChoiceDiv.classList.add('red-glow');
     setTimeout(()=>{
         // remove highlight after 2 sec
         userChoiceDiv.classList.remove('red-glow');
+      
     }, 2000)
 
 
@@ -151,10 +157,13 @@ function draw(user, computer){
     message.innerHTML= `${convertBacKToWord(user)} is equal ${convertBacKToWord(computer)}. it's a draw!`;
    
   //use css class predifine in the stylesheet to highligh user choice
+ 
   userChoiceDiv.classList.add('grey-glow');
   setTimeout(()=>{
       // remove highlight after 2 sec
     userChoiceDiv.classList.remove('grey-glow');
+  
+
 }, 2000)
 }
 
@@ -167,9 +176,21 @@ function restartGame(e){
     // change the ui
     computerScore.innerHTML= '0';
     userScore.innerHTML= '0';
+    // remove class text color for messages
+    removeClassText()
+
     message.innerHTML=`Let's start`;
 // hide the restart btn fromui
     restart.style.display='none';
+}
+
+// reset message h2  text css class
+function removeClassText(){
+    if(message.classList.contains("text-lose") ){
+        message.classList.remove("text-lose");
+    }else  if(message.classList.contains("text-win") ){
+        message.classList.remove("text-win");
+    }
 }
 
 // event listener
