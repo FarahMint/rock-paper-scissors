@@ -195,5 +195,4 @@ function removeClassText(){
 
 // event listener
 options.forEach( choice => choice.addEventListener('click', playGame)); 
-// window.addEventListener('click', clearModal); 
 restart.addEventListener('click', restartGame); 
