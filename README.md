@@ -32,42 +32,6 @@
   * 'pp': paper paper 
   * 'ss': scissors scissors
  
- 
-
-// main function 
-function playGame(e){};
-
-// computer play -generate random choices  
-function getComputerOption(){};
-
- 
-// winner function determines who wins use switch statement as we can haveno more than of 3 outcome
-win - lose or draw  
-function getWinner(user, computer ){switch (user + computer) {... }}
-
-
-
-//result trigger one of this function 
-function win(user, computer){}
-function lose(user, computer){}
-function draw(user, computer){}
-
-// restart the game 
-function restartGame(e){}
-
-
-//utilities function help to clear style and format 
-
-// tansform char to the  corresponding word 
-function convertBacKToWord(letter){}
-
-// reset message h2  text css class 
-function removeClassText(){}
-
-//  event listener 
-options.forEach( choice => choice.addEventListener('click', playGame)); 
- 
-restart.addEventListener('click', restartGame); 
 
 // 1) UI at the beginning of the game 
 ![Screen Shot 2019-06-24 at 11 06 46 PM](https://user-images.githubusercontent.com/18241226/60055724-7add4500-96d6-11e9-9a23-b28c76af834e.png)
